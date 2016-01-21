@@ -1,2 +1,2 @@
-# myExercise
-basic exercise of algorithm
+# myLeetcodeExercise
+my solution of Leetcode problems
