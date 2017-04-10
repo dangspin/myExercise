@@ -1,4 +1,4 @@
-// This is the first solution
+// This is the first solution, use the while loop. The solution is very straightfoward.
 
 public class Solution {
     /**
@@ -22,3 +22,8 @@ public class Solution {
         }
     }
 }
+
+
+
+
+// Solution version 2:
