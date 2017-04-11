@@ -43,5 +43,20 @@ public class Solution {
         }
     }
     
-    
+     public void sortIntegers(int[] A) {
+        // Write your code here
+        // Insertion sort: keep switching and push the smallest to the appropriate position in the array. repeat the length of array times.
+        
+        int time=A.length;
+        
+        for (int i=1;i<time;i++){
+            int j=i;
+            while (j>0 && A[j-1]>A[j]){
+                int tmp=A[j];
+                A[j]=A[j-1];
+                A[j-1]=tmp;
+                j=j-1;
+            }
+        }
+    }
 }
