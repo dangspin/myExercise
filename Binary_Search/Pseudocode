@@ -1,0 +1,51 @@
+// Input:
+
+Array a;
+int target;
+
+
+// Algorithm:
+
+1. Regular implement:
+
+int Binary_Search(int[] a, int l,int r, int target):
+    
+    int mid;
+    
+    while (l<=r):
+          
+          mid = l+ (r-l)/2;
+          
+          if (a[mid]==target):
+              return mid;
+              
+          if (a[mid]<key)：
+              l=mid+1;
+              
+          else:
+              r=mid-1;
+              
+    return -1;
+    
+    
+   
+2. Optimal implement:
+
+int Binary_Search (int[] a, int l, int r, int target):
+
+    int mid;
+    
+    while (r-l>1):
+          
+          mid=l+(r-l)/2;
+          
+          if (a[mid]<=key):
+             l=mid;
+             
+          else:
+             r=midl;
+    
+    // now we have l+1=r!
+
+The optimal version of Binary_Search could be used to do more things than searching for a single number. We could use the optimal version to 
+discuss the lower and upper bound of the a sorted array. The example below showed the useage of this algorithm
