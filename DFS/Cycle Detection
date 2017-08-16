@@ -1,4 +1,8 @@
 // DFS is the algorithm to solve this problem
+
+
+
+1. Undirected graph
 // The core idea is this:
 // For each node, it has tree status:
 // 1. not visited
@@ -18,3 +22,5 @@ public void hasCycle(GraphNode nd){
     visited.put(nd, true); // mark as status-2   
 }
 
+
+2. Directed graph
