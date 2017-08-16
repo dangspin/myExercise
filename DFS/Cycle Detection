@@ -23,4 +23,20 @@ public void hasCycle(GraphNode nd){
 }
 
 
+// Another idea:
+
+public boolean noCycle(Node nd, Node, parent){
+        if (visited(nd)){
+            return false;
+        }
+        visited(nd)=true;
+        for (node neighbor:nd){
+            if (neighbor!=parent && !noCycle){
+                return false;
+            }
+        }
+        return true;
+}
+
+
 2. Directed graph
