@@ -1,0 +1,21 @@
+// DFS core code
+
+bool DFS(Node n, int d){
+     if (isEnd(n,d)){
+        return true;
+     }
+     
+     for (Node neighbor: n){
+         if (!visit[neighbor]){
+            visit[neighbor]=true //avoid meet it again in the next step DFS search
+            if (DFS(neighbor, d)){if there is a DFS solution
+                // Do something else, i.e mark the depth, calculate the sum
+                return true
+            }
+            
+            visit[neighbor]=false; // In order to revisit it again. This is very important for backtracking algorithm
+         }
+     }
+     
+     return false;
+}
