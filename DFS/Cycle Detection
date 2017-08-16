@@ -1,0 +1,20 @@
+// DFS is the algorithm to solve this problem
+// The core idea is this:
+// For each node, it has tree status:
+// 1. not visited
+// 2. visited already, but doing DFS and not finished yet
+// 3. Already finished DFS
+// Now we use a HashMap to solve this, the idea is from http://x-wei.github.io/dfs-summary.html
+// HasheMap<GraphNode, Boolean> visited = new HasheMap<GraphNode, Boolean>();
+
+public void hasCycle(GraphNode nd){      
+    visited.put(nd, false); // mark as status-1   
+    for(GraphNode next: nd.neighbors){   
+        if( !visited.contains(next) )   
+            DFS(next);   
+        else if(visited.get(next)==false) // found cycle   
+            System.out.println("Cycle detected!!!");   
+    }// now all touchable nodes from nd are visited   
+    visited.put(nd, true); // mark as status-2   
+}
+
