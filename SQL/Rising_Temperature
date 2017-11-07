@@ -1,0 +1,8 @@
+Given a Weather table, write a SQL query to find all dates' Ids with higher temperature compared to its previous (yesterday's) dates.
+
+# Write your MySQL query statement below
+SELECT today.Id
+FROM   Weather as today
+LEFT JOIN Weather as tomorrow
+ON     DATEDIFF(today.Date, tomorrow.Date) = 1
+WHERE  tomorrow.Temperature < today.Temperature
