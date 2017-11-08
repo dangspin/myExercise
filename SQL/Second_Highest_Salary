@@ -1,0 +1,9 @@
+Write a SQL query to get the second highest salary from the Employee table.
+
+
+
+
+# Write your MySQL query statement below
+SELECT MAX(Salary) as SecondHighestSalary
+FROM   Employee
+WHERE  Salary NOT IN (SELECT MAX(Salary) FROM Employee)
