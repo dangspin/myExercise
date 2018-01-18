@@ -8,6 +8,8 @@
  * }
  */
 public class Solution {
+    
+    // Iterative version
     public List<List<Integer>> levelOrder(TreeNode root) {
         ArrayList<List<Integer>> res=new ArrayList<List<Integer>>();
         
@@ -39,5 +41,31 @@ public class Solution {
         }
         
         return res;
+    }
+    
+    // DFS version
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        
+        ArrayList<List<Integer>> tree = new ArrayList<List<Integer>> ();
+        
+        if (root == null) {return tree;}
+        
+        help(root, tree, 0);
+        
+        return tree;
+    }
+    
+    public void help(TreeNode root, List<List<Integer>> tree, int layer) {
+        if (root == null) {
+            return ;
+        }
+        
+        if (tree.size() <= layer) {
+            tree.add(new ArrayList<Integer>());
+        }
+        
+        tree.get(layer).add(root.val);
+        help(root.left, tree, layer+1);
+        help(root.right, tree, layer+1);
     }
 }
