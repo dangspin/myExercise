@@ -3,6 +3,8 @@ public class Solution {
      * @param root: The root of binary tree
      * @return root of new tree
      */
+    
+    // Recursive version
     public TreeNode cloneTree(TreeNode root) {
         // Write your code here
         
@@ -16,6 +18,7 @@ public class Solution {
         }
     }
     
+    // Iterative version, two queues to traverse two trees
     public TreeNode cloneTree(TreeNode root){
         // This is the iterative version of the problem. Here, I considered the BFS with two queues.
         // One is used to track the old tree, the other is used to build the new tree.
