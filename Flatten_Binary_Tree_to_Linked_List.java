@@ -44,6 +44,35 @@ public class Solution {
             
         }
     }
+    
+    // This version only need one stack only
+    public void flatten(TreeNode root) {
+        // write your code here
+        if (root == null) {return ;}
+        
+        ArrayList<TreeNode> stack = new ArrayList<TreeNode>();
+        stack.add(root);
+        
+        while (!stack.isEmpty()) {
+            TreeNode current = stack.remove(stack.size()-1);
+            
+            if (current.right != null) {
+                stack.add(current.right);
+            }
+            
+            if (current.left != null) {
+                stack.add(current.left);
+            }
+            
+            if (!stack.isEmpty()) {
+                current.left = null;
+                current.right = stack.get(stack.size()-1);
+            } else {
+                current.left = null;
+                current.right = null;
+            }
+        }
+    }
 }
 
 
