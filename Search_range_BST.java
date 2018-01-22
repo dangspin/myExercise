@@ -37,4 +37,39 @@ public class Solution {
         }
         find(root.right,k1,k2,result);
     }
+    
+    // Iterative traversal of Binary search tree. Inorder use of stack
+    
+    public List<Integer> searchRange(TreeNode root, int k1, int k2) {
+        if (root == null) {return result;}
+        
+        ArrayList<TreeNode> stack = new ArrayList<TreeNode>();
+ 
+        //define a pointer to track nodes
+        TreeNode current = root;
+ 
+        while(!stack.isEmpty() || current != null){
+ 
+            // if it is not null, push to stack
+            //and go down the tree to left
+            if(current != null){
+                stack.add(current);
+                current = current.left;
+ 
+            // if no left child
+            // pop stack, process the node
+            // then let p point to the right
+            }else{
+                TreeNode tmp = stack.remove(stack.size()-1);
+                
+                if (tmp.val >= k1 && tmp.val <= k2) {
+                    result.add(tmp.val);
+                }
+                
+                current = tmp.right;
+            }
+        }
+ 
+        return result;
+    }
 }
