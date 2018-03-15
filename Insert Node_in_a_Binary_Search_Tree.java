@@ -62,5 +62,37 @@ public class Solution {
         }
     }
     
+    public TreeNode insertNode(TreeNode root, TreeNode node) {
+        // write your code here
+        // Iterative version
+        if (root == null) {
+            return node;
+        }
+        
+        Stack<TreeNode> stack = new Stack<TreeNode> ();
+        
+        stack.push(root);
+        
+        while (!stack.isEmpty()) {
+            TreeNode cur = stack.pop();
+            
+            if (cur.val > node.val) {
+                if (cur.left == null) {
+                    cur.left = node;
+                    break;
+                }
+                stack.push(cur.left); 
+            } else {
+                if (cur.right == null) {
+                    cur.right = node;
+                    break;
+                }
+                stack.push(cur.right);
+            }
+        }
+        
+        return root;
+        
+    }
     
 }
