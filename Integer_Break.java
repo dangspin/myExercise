@@ -12,7 +12,7 @@ class Solution {
         
         for (int i = 3; i <= n; i++) {
             for (int j = 1; j < i; j++) {
-                intBreak[i] = Math.max(intBreak[i], Math.max(j*(i-j), j*intBreak[i-j]));
+                intBreak[i] = Math.max(intBreak[i], Math.max(j*(i-j), Math.max(intBreak[j]*intBreak[i-j], j*intBreak[i-j])));
             }
         }
         
